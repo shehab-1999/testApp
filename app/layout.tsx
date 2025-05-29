@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,24 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "مستشفى المجد",
-  description:
-    "نسعى لتحقيق أعلى معايير الجودة في الرعاية الصحية، من خلال: توفير خدمات طبية متكاملة وشاملة. استخدام أحدث التقنيات والمعدات الطبية. تعزيز التعليم والتدريب المستمر لفريق العمل. تحقيق رضا ا",
-    openGraph: {
-      title: "مستشفى المجد",
-      description:
-        "نسعى لتحقيق أعلى معايير الجودة في الرعاية الصحية، من خلال: توفير خدمات طبية متكاملة وشاملة. استخدام أحدث التقنيات والمعدات الطبية. تعزيز التعليم والتدريب المستمر لفريق العمل. تحقيق رضا ا",
-       
-      type: "website",
-     
-      url: "http://192.168.0.149:3000/ar/opengraph-image.jpg",
-      siteName: "مستشفى المجد",
-      images:[{
-        url:"http://192.168.0.149:3000/opengraph-image.jpg",
+   title: 'Nidavi',
+  description: 'Nidavi for Design',
+  openGraph: {
+ title: 'Nidavi',
+    description: 'Nidavi for Design',
+    url: 'https://shehab3.vercel.app/',
+    siteName: 'shehab3',
+    images: [
+      {
+        url: 'https://shehab3.vercel.app/images/logo1.png',
         width: 1200,
-          height: 630,}
-      ]
-    },};
+        height: 630,
+        alt: 'وصف الصورة',
+      },
+    ],
+    type: 'website',
+  },};
 
 export default function RootLayout({
   children,
@@ -45,7 +43,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >    <Navbar/>
         {children}
-           <Footer/>
+        
       </body>
     </html>
   );
