@@ -1,5 +1,3 @@
-// components/WhatWeCreate.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -10,40 +8,40 @@ const fadeUpVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * .3, duration: .7 },
+    transition: { delay: i * 0.3, duration: 0.7, ease: "easeOut" },
   }),
 };
 
-export default function WhatWeCreate() {
-  // const images = [
-  //   {
-  //     src: "/images/BigNidaviSmile.png",
-  //     title: "Branding",
-  //     desc: "Logo, Flyer, Visitenkarten",
-  //     class: "circle circle1",
-  //   },
-  //   {
-  //     src: "/images/BrandingCircle.png",
-  //     title: "Marketing",
-  //     desc: "SEO- & Ad-Verwaltung",
-  //     class: "circle circle2",
-  //   },
-  //   {
-  //     src: "/images/MarketingCircle.png",
-  //     title: "Webdesign",
-  //     desc: "Landingpage, Shop, Blog, etc.",
-  //     class: "circle circle3",
-  //   },
-  //   {
-  //     src: "/images/WebdesignCircle.png",
-  //     title: "UX/UI",
-  //     desc: "Designsysteme & Wireframes",
-  //     class: "circle circle4",
-  //   }, // أضفت صورة رابعة وهمية
-  // ];
+const images = [
+  {
+    src: "/images/BigNidaviSmile.png",
+    title: "Branding",
+    desc: "Logo, Flyer, Visitenkarten",
+    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-0 left-[80px] z-[1]",
+  },
+  {
+    src: "/images/BrandingCircle.png",
+    title: "Marketing",
+    desc: "SEO- & Ad-Verwaltung",
+    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-[100px] right-[60px]",
+  },
+  {
+    src: "/images/MarketingCircle.png",
+    title: "Webdesign",
+    desc: "Landingpage, Shop, Blog, etc.",
+    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-[250px] right-0 z-[1]",
+  },
+  {
+    src: "/images/WebdesignCircle.png",
+    title: "UX/UI",
+    desc: "Designsysteme & Wireframes",
+    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute bottom-0 left-[185px] max-md:left-[50px]",
+  },
+];
 
+export default function WhatWeCreate() {
   return (
-    <section className="bg-white  py-16 lg:px-[10vw] max-lg:px-[6vw] max-md:px-[4vw]">
+    <section className="bg-white py-16 lg:px-[10vw] max-lg:px-[6vw] max-md:px-[4vw]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* النص */}
         <div className="text-[20px]">
@@ -76,105 +74,27 @@ export default function WhatWeCreate() {
         </div>
 
         {/* الصور */}
-
-        <div className=" flex max-md:justify-center  justify-end">
-          <div className="relative md:w-[450px]  md:h-[600px] max-md:w-[300px] max-md:h-[450px] flex justify-center text-center ">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false ,}}
-              variants={fadeUpVariants}
-              style={{
-                
-                transform: "translate(-50%, 100px) rotate(-5deg)",
-                transition: "opacity 1s ease, transform 1s ease",
-              }}
-              className={`w-[200px] max-md:left-0 h-[200px] max-md:h-[150px] max-md:w-[150px] max-md:right-0 overflow-hidden opacity-0 absolute top-0 left-[80px] z-[1]`}
-            >
-              <Image
-                src={"/images/BigNidaviSmile.png"}
-                alt={""}
-                width={200}
-                height={200}
-                className=""
-              />
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-              variants={fadeUpVariants}
-              style={{
-                transform: "translate(-50%, 100px) rotate(5deg)",
-                transition: "opacity 1s ease, transform 1s ease",
-              }}
-              className={`w-[200px] max-md:h-[150px] max-md:w-[150px] max-md:top-[85px]  overflow-hidden opacity-0 absolute  h-[200px] top-[100px] right-[60px]`}
-            >
-              <Image
-                src={"/images/BrandingCircle.png"}
-                alt={""}
-                width={200}
-                height={200}
-                className=""
-              />
-            </motion.div>{" "}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUpVariants}
-              style={{
-                transform: "translate(-50%, 100px) rotate(-4deg)",
-                transition: "opacity 1s ease, transform 1s ease",
-              }}
-              className={`w-[200px] max-md:h-[150px]  max-md:w-[150px] max-md:top-[200px] max-md:right-[50px]  overflow-hidden opacity-0 absolute transform h-[200px] top-[250px] right-0 z-[1] `}
-            >
-              <Image
-                src={"/images/MarketingCircle.png"}
-                alt={""}
-                width={200}
-                height={200}
-                className=""
-              />
-            </motion.div>{" "}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUpVariants}
-              style={{
-                transform: "translate(-50%, 100px) rotate(6deg)",
-                transition: "opacity 1s ease, transform 1s ease",
-              }}
-              className={`w-[200px] max-md:h-[150px] max-md:left-[50px] max-md:w-[150px] overflow-hidden opacity-0 absolute transform h-[200px] left-[185px] bottom-0 `}
-            >
-              <Image
-                src={"/images/WebdesignCircle.png"}
-                alt={""}
-                width={200}
-                height={200}
-                className=""
-              />
-            </motion.div>
-            {/* {images.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUpVariants}
-              className={`${item.class}`}
-            >
-              <Image
-                src={item.src}
-                alt={item.title}
-                width={200}
-                height={200}
-                className=""
-              />
-            </motion.div>
-          ))} */}
+        <div className="flex max-md:justify-center justify-end">
+          <div className="relative md:w-[450px] md:h-[600px] max-md:w-[300px] max-md:h-[450px] flex justify-center text-center">
+            {images.map((item, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+                variants={fadeUpVariants}
+                className={`${item.class} overflow-hidden`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
