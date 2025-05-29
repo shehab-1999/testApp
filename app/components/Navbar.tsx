@@ -27,7 +27,7 @@ export default function Navbar() {
         {/* الشعار */}
         <div className="z-50">
           <Image
-            src="/images/Logo.png"
+            src="/images/logo.png"
             alt="Nidavi Logo"
             width={120}
             height={40}
