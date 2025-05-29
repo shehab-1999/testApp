@@ -13,31 +13,32 @@ const fadeUpVariants = {
 };
 
 const images = [
-  {
-    src: "/images/BigNidaviSmile.png",
-    title: "Branding",
-    desc: "Logo, Flyer, Visitenkarten",
-    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-0 left-[80px] z-[1]",
-  },
-  {
-    src: "/images/BrandingCircle.png",
-    title: "Marketing",
-    desc: "SEO- & Ad-Verwaltung",
-    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-[100px] right-[60px]",
-  },
-  {
-    src: "/images/MarketingCircle.png",
-    title: "Webdesign",
-    desc: "Landingpage, Shop, Blog, etc.",
-    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute top-[250px] right-0 z-[1]",
-  },
-  {
-    src: "/images/WebdesignCircle.png",
-    title: "UX/UI",
-    desc: "Designsysteme & Wireframes",
-    class: "w-[200px] h-[200px] max-md:w-[150px] max-md:h-[150px] absolute bottom-0 left-[185px] max-md:left-[50px]",
-  },
-];
+    {
+      src: "/images/BigNidaviSmile.png",
+      title: "Branding",
+      desc: "Logo, Flyer, Visitenkarten",
+ class: "w-[200px] max-md:left-0 h-[200px] max-md:h-[150px] max-md:w-[150px] max-md:right-0 overflow-hidden opacity-0 absolute top-0 left-[80px] z-[1]",
+     
+    },
+    {
+      src: "/images/BrandingCircle.png",
+      title: "Marketing",
+      desc: "SEO- & Ad-Verwaltung",
+       class: "w-[200px] max-md:h-[150px] max-md:w-[150px] max-md:top-[85px]  overflow-hidden opacity-0 absolute  h-[200px] top-[100px] right-[60px]",
+    },
+    {
+      src: "/images/MarketingCircle.png",
+      title: "Webdesign",
+      desc: "Landingpage, Shop, Blog, etc.",
+      class: "w-[200px] max-md:h-[150px]  max-md:w-[150px] max-md:top-[200px] max-md:right-[50px]  overflow-hidden opacity-0 absolute transform h-[200px] top-[250px] right-0 z-[1]",
+    },
+    {
+      src: "/images/WebdesignCircle.png",
+      title: "UX/UI",
+      desc: "Designsysteme & Wireframes",
+      class: "w-[200px] max-md:h-[150px] max-md:left-[50px] max-md:w-[150px] overflow-hidden opacity-0 absolute transform h-[200px] left-[185px] bottom-0",
+    }, // أضفت صورة رابعة وهمية
+  ];
 
 export default function WhatWeCreate() {
   return (
