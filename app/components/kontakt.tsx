@@ -8,7 +8,7 @@ import React, { useEffect, useRef } from "react";
 
 // }
 export default function Kontakt() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null); // Added proper type
 
   useEffect(() => {
     const scrollToAlignBottom = () => {
@@ -18,17 +18,15 @@ export default function Kontakt() {
         const sectionHeight = section.offsetHeight;
         const screenHeight = window.innerHeight;
 
-        // المسافة المطلوبة حتى تصبح نهاية السيكشن في نهاية الشاشة
         const scrollTarget = sectionTop + sectionHeight - screenHeight;
 
         window.scrollTo({
           top: scrollTarget,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       }
     };
 
-    // نفّذ عند تحميل الصفحة
     scrollToAlignBottom();
   }, []);
   return (

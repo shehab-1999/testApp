@@ -7,9 +7,8 @@ export default function HeroSection() {
   const words = ["Geschichte", "Marke", "Strategie", "Identität", "Botschaft"];
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null); // Added proper type
 
-  
   useEffect(() => {
     const scrollToAlignBottom = () => {
       if (sectionRef.current) {
@@ -18,7 +17,6 @@ export default function HeroSection() {
         const sectionHeight = section.offsetHeight;
         const screenHeight = window.innerHeight;
 
-        // المسافة المطلوبة حتى تصبح نهاية السيكشن في نهاية الشاشة
         const scrollTarget = sectionTop + sectionHeight - screenHeight;
 
         window.scrollTo({
@@ -28,20 +26,21 @@ export default function HeroSection() {
       }
     };
 
-    // نفّذ عند تحميل الصفحة
     scrollToAlignBottom();
   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // fade out
+      setFade(false);
       setTimeout(() => {
         setIndex((prevIndex) => (prevIndex + 1) % words.length);
-        setFade(true); // fade in
+        setFade(true);
       }, 300);
     }, 2000);
 
     return () => clearInterval(interval);
   }, []);
+
   const logos = [
     "/images/ArslanTiefbauWeiß.png",
     "/images/AYBASService.png",
@@ -53,8 +52,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section  ref={sectionRef} className="relative h-screen overflow-hidden">
-      {/* فيديو الخلفية */}
+    <section ref={sectionRef} className="relative h-screen overflow-hidden">
       <video
         autoPlay
         muted
@@ -67,16 +65,15 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 z-0" />
 
-      <div className="relative z-10 h-[calc(100vh-80px)] flex flex-col mt-[80px] lg:px-[10vw] max-lg:px-[6vw] max-md:px-[4vw]  ">
+      <div className="relative z-10 h-[calc(100vh-80px)] flex flex-col mt-[80px] lg:px-[10vw] max-lg:px-[6vw] max-md:px-[4vw]">
         <div className="flex-1 flex items-center justify-center">
-          {" "}
-          {/* الديف الأول */}
           <div className="text-white text-center flex flex-col w-full">
             <div className="containers text-white w-full">
-              <div className="justify-items-start ">
-                <div className="headline text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem] max-[30rem]:text-[1.8rem] max-[25rem]:text-[1.5rem]">Nicht nur Design.</div>
-                <div className="highlight w-full text-[11rem] max-[95rem]:text-[10rem] max-[90rem]:text-[9rem]  max-[80rem]:text-[7rem]  max-[55rem]:text-[6rem] 
-                 max-md:text-[5rem] max-sm:text-[4rem] max-[30rem]:text-[3rem] max-[25rem]:text-[2.5rem] ">
+              <div className="justify-items-start">
+                <div className="headline text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem] max-[30rem]:text-[1.8rem] max-[25rem]:text-[1.5rem]">
+                  Nicht nur Design.
+                </div>
+                <div className="highlight w-full text-[11rem] max-[95rem]:text-[10rem] max-[90rem]:text-[9rem] max-[80rem]:text-[7rem] max-[55rem]:text-[6rem] max-md:text-[5rem] max-sm:text-[4rem] max-[30rem]:text-[3rem] max-[25rem]:text-[2.5rem]">
                   Eine{" "}
                   <span
                     className={`transition-opacity duration-300 ease-in-out ${
@@ -84,24 +81,23 @@ export default function HeroSection() {
                     }`}
                   >
                     {words[index]}
-                  
                   </span>
                 </div>
-                <div className="subtext text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem] max-[30rem]:text-[1.8rem] max-[25rem]:text-[1.5rem]">die Eindruck macht.</div>
+                <div className="subtext text-[3rem] max-md:text-[2.5rem] max-sm:text-[2rem] max-[30rem]:text-[1.8rem] max-[25rem]:text-[1.5rem]">
+                  die Eindruck macht.
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className=" text-white">
-          {" "}
-          {/* الديف الثاني */}
-          <p className="text-xl xl:text-4xl  lg:text-3xl">
+        <div className="text-white">
+          <p className="text-xl xl:text-4xl lg:text-3xl">
             Branding, Marketing & Webdesign
             <br />
             mit Langzeitwirkung.
           </p>
-          <button className="bg-[#fed701] my-[4vh] text-[] xl:text-2xl  lg:text-xl text-black px-6 py-2 w-auto rounded-lg font-medium hover:bg-[#fed701] transition">
+          <button className="bg-[#fed701] my-[4vh] text-[] xl:text-2xl lg:text-xl text-black px-6 py-2 w-auto rounded-lg font-medium hover:bg-[#fed701] transition">
             Erstgespräch buchen
           </button>
           <div className="overflow-hidden whitespace-nowrap mb-[4vh]">
