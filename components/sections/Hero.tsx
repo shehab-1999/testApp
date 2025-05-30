@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center bg-background md:pt-20 pb-16 overflow-hidden">
-      <div className="md:container-custom">
+      <div className="md:container-custom ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Bild ohne Animation - zuerst auf Mobile */}
           <div className="relative order-1 lg:order-2">
@@ -49,7 +49,7 @@ export default function Hero() {
           </div>
 
           {/* Textinhalt - zweitens auf Mobile */}
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-8 order-2 max-md:px-[5%] lg:order-1">
             <h1 className="heading-xl">
               Professionelle <span className="text-primary">Webdesign</span> & <br/>Markenentwicklung
             </h1>
