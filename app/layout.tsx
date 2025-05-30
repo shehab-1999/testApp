@@ -15,8 +15,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Kreativ Studio | Moderne Markengestaltung & Webdesign',
+  title: 'Nidavi | Moderne Markengestaltung & Webdesign',
   description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
+  
 };
 
 export default function RootLayout({
