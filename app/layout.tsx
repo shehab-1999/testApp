@@ -17,7 +17,22 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Nidavi | Moderne Markengestaltung & Webdesign',
   description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
-  
+    openGraph: {
+    title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
+  description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
+    url: 'https://shehab3.vercel.app',
+    siteName: 'اسم الموقع',
+    images: [
+      {
+        url: 'https://shehab3.vercel.app/images/favion.png', // URL الصورة الكاملة
+        width: 1200,
+        height: 630,
+        alt: '',
+      },
+    ],
+    locale: 'ar_AR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
