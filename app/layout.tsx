@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
+  
   description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
   openGraph: {
     title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
@@ -33,12 +34,7 @@ export const metadata: Metadata = {
     locale: 'de_DE', // غيرت إلى ألمانية لأن موقعك ألماني
     type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
-    description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
-    images: ['https://shehab3.vercel.app/images/og-image.jpg'],
-  },
+
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { ArrowDownCircle, Link as LinkIcon, Rocket, Settings } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowDownCircle, Link as LinkIcon, Rocket, Settings, ShoppingCart, PenTool } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
@@ -10,11 +10,30 @@ export default function Hero() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
+  // Bildliste mit Beispielen für Webdesign, E-Commerce und Logos
+  const images = [
+    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg", // Webdesign
+    "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg", // E-Commerce
+    "https://images.pexels.com/photos/7376/startup-photos.jpg", // Logo Design
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
     }
   }, [isInView, controls]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Bildwechsel alle 3 Sekunden (besser für Präsentation)
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const scrollToNextSection = () => {
     const servicesSection = document.getElementById('services');
@@ -23,7 +42,7 @@ export default function Hero() {
     }
   };
 
-  // تعريف متغيرات الأنيميشن
+  // Animationen
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,19 +78,6 @@ export default function Hero() {
     }
   };
 
-  const badgeItem = {
-    hidden: { scale: 0.5, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 100
-      }
-    }
-  };
-
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center bg-background pt-20 pb-16 overflow-hidden">
       <motion.div
@@ -87,14 +93,14 @@ export default function Hero() {
               variants={item}
               className="heading-xl"
             >
-              Die <span className="text-primary">#1</span> Webdesign Agentur
+              Professionelles <span className="text-primary">Webdesign</span> & <br/>Markenentwicklung
             </motion.h1>
             
             <motion.p 
               variants={item}
               className="body-lg md:text-xl text-muted-foreground"
             >
-              Wir sind mehr als eine klassische Webdesign Agentur im Herzen von München, wir machen Ihre Webseite zu Ihrem besten Mitarbeiter.
+              Wir kreieren moderne Websites, erfolgreiche E-Commerce Lösungen und einprägsame Logos - maßgeschneidert für Ihren Geschäftserfolg.
             </motion.p>
 
             <motion.div 
@@ -109,9 +115,9 @@ export default function Hero() {
                   whileHover={{ scale: 1.1 }}
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
                 >
-                  <LinkIcon className="h-6 w-6 text-primary" />
+                  <PenTool className="h-6 w-6 text-primary" />
                 </motion.div>
-                <span className="text-lg">Suchmaschinenoptimiert</span>
+                <span className="text-lg">Individuelle Webdesign-Lösungen</span>
               </motion.div>
 
               <motion.div 
@@ -122,9 +128,9 @@ export default function Hero() {
                   whileHover={{ scale: 1.1 }}
                   className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
                 >
-                  <Rocket className="h-6 w-6 text-primary" />
+                  <ShoppingCart className="h-6 w-6 text-primary" />
                 </motion.div>
-                <span className="text-lg">Performant & skalierbar</span>
+                <span className="text-lg">E-Commerce & Online-Shops</span>
               </motion.div>
 
               <motion.div 
@@ -137,23 +143,21 @@ export default function Hero() {
                 >
                   <Settings className="h-6 w-6 text-primary" />
                 </motion.div>
-                <span className="text-lg">Auf Ihre Workflows angepasst</span>
+                <span className="text-lg">Corporate Design & Logos</span>
               </motion.div>
             </motion.div>
             
             <motion.div 
               variants={item}
               className="pt-4"
-                 whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Button 
                 size="lg" 
                 className="w-full md:w-auto"
-             
-               
               >
-                Projektanfrage
+                Kostenlose Beratung
               </Button>
             </motion.div>
           </div>
@@ -167,21 +171,15 @@ export default function Hero() {
               className="aspect-[9/16] w-full max-w-md mx-auto overflow-hidden rounded-3xl"
             >
               <motion.img
-                src="https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg"
-                alt="Webdesign Showcase"
+                src={images[currentImageIndex]}
+                alt="Unsere Dienstleistungen: Webdesign, E-Commerce und Logo-Design"
                 className="w-full h-full object-cover rounded-3xl"
                 whileHover={{ scale: 1.03 }}
-              />
-            </motion.div>
-            <motion.div 
-              variants={badgeItem}
-              className="absolute -bottom-8 right-0 bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg"
-              whileHover={{ y: -5 }}
-            >
-              <img
-                src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg"
-                alt="Award"
-                className="w-32 h-auto"
+                key={images[currentImageIndex]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
               />
             </motion.div>
           </motion.div>
@@ -192,16 +190,14 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-             whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <Button 
           variant="ghost" 
           size="icon" 
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary"
           onClick={scrollToNextSection}
-     
         >
           <ArrowDownCircle className="h-8 w-8" />
         </Button>
