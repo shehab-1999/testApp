@@ -1,49 +1,41 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+import Header from '@/components/layout/Header';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space',
 });
 
 export const metadata: Metadata = {
-   title: 'Nidavi',
-  description: 'Nidavi for Design',
-  openGraph: {
- title: 'Nidavi',
-    description: 'Nidavi for Design',
-    url: 'https://shehab3.vercel.app/',
-    siteName: 'shehab3',
-    images: [
-      {
-        url: 'https://shehab3.vercel.app/images/logo1.png',
-        width: 1200,
-        height: 630,
-        alt: 'وصف الصورة',
-      },
-    ],
-    type: 'website',
-  },};
+  title: 'Kreativ Studio | Moderne Markengestaltung & Webdesign',
+  description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >    <Navbar/>
-        {children}
-        
+    <html lang="de" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
