@@ -3,9 +3,17 @@
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { Palette, Globe, LineChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, ReactNode } from 'react';
 
-const ServiceCard = ({ title, description, icon, delay }) => {
+// تعريف نوع الـ Props
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: ReactNode;
+  delay: number;
+}
+
+const ServiceCard = ({ title, description, icon, delay }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -61,7 +69,7 @@ export default function Services() {
       y: 0,
       transition: {
         duration: 0.4,
-        ease: "easeInOut"
+        ease: "easeOut"
       }
     }
   };
