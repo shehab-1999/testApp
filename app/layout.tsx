@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
   description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
     url: 'https://shehab3.vercel.app',
-    siteName: 'اسم الموقع',
+    siteName: 'Nidavi',
     images: [
       {
         url: 'https://shehab3.vercel.app/images/favicon.png', // URL الصورة الكاملة
         width: 1200,
         height: 630,
-        alt: '',
+        alt: 'Nidavi',
       },
     ],
     locale: 'ar_AR',
