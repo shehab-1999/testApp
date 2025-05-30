@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDownCircle, ShoppingCart, PenTool, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -32,12 +33,14 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center bg-background md:pt-20 pb-16 overflow-hidden">
-      <div className="container-custom">
+      <div className="md:container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Bild ohne Animation - zuerst auf Mobile */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-[9/16] w-full max-w-md mx-auto overflow-hidden md:rounded-3xl rounded-sm">
-              <img
+            <div className="aspect-[9/16] w-full max-w-md md:mx-auto overflow-hidden md:rounded-3xl rounded-sm">
+              <Image
+              height={700}
+              width={1000}
                 src={images[currentImageIndex]}
                 alt="Unsere Dienstleistungen: Webdesign, E-Commerce und Logo-Design"
                 className="w-full h-full object-cover "
