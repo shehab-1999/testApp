@@ -17,21 +17,27 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
   description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
-    openGraph: {
+  openGraph: {
     title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
-  description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
+    description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
     url: 'https://shehab3.vercel.app',
     siteName: 'Nidavi',
     images: [
       {
-        url: 'https://shehab3.vercel.app/images/favicon.png', // URL الصورة الكاملة
+        url: 'https://shehab3.vercel.app/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Nidavi',
+        alt: 'Nidavi Design Agentur',
       },
     ],
-    locale: 'ar_AR',
+    locale: 'de_DE', // غيرت إلى ألمانية لأن موقعك ألماني
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nidavi | NIDAVI-Create. Impress.Stay.|DesignagenturinMiesbach',
+    description: 'Spezialist für moderne Markengestaltung, Webdesign und strategisches Marketing für Handwerksunternehmen und kleine Firmen',
+    images: ['https://shehab3.vercel.app/images/og-image.jpg'],
   },
 };
 
