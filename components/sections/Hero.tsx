@@ -31,16 +31,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center bg-background pt-20 pb-16 overflow-hidden">
+    <section className="relative min-h-screen w-full flex items-center justify-center bg-background md:pt-20 pb-16 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Bild ohne Animation - zuerst auf Mobile */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-[9/16] w-full max-w-md mx-auto overflow-hidden rounded-3xl">
+            <div className="aspect-[9/16] w-full max-w-md mx-auto overflow-hidden md:rounded-3xl rounded-sm">
               <img
                 src={images[currentImageIndex]}
                 alt="Unsere Dienstleistungen: Webdesign, E-Commerce und Logo-Design"
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover "
               />
             </div>
           </div>
