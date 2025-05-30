@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'Nidavi',
     images: [
       {
-        url: 'https://shehab3.vercel.app/images/logo_black.jpg',
+        url: 'https://shehab3.vercel.app/images/logo_black.png',
         width: 1200,
         height: 630,
         alt: 'Nidavi Design Agentur',
