@@ -37,7 +37,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Bild ohne Animation - zuerst auf Mobile */}
           <div className="relative order-1 lg:order-2 ">
-            <div className="aspect-[9/16] w-full max-w-md max-md:h-[70vh] md:mx-auto overflow-hidden md:rounded-3xl rounded-sm">
+            <div className="aspect-[9/16] w-full max-w-md max-md:h-[60vh] md:mx-auto overflow-hidden md:rounded-3xl rounded-sm">
               <Image
               height={700}
               width={1000}
